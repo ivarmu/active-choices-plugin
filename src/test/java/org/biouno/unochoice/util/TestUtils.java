@@ -94,6 +94,8 @@ public class TestUtils {
     @Test
     public void testIsDisabled() {
         assertTrue(Utils.isDisabled("a:disabled"));
+        assertTrue(Utils.isDisabled("a:selected:disabled"));
+        assertTrue(Utils.isDisabled("a:disabled:selected"));
         assertFalse(Utils.isDisabled(null));
         assertFalse(Utils.isDisabled(""));
         assertFalse(Utils.isDisabled("a"));
@@ -108,6 +110,12 @@ public class TestUtils {
         assertEquals("", escaped);
 
         escaped = Utils.escapeDisabled("a:disabled");
+        assertEquals("a", escaped);
+
+        escaped = Utils.escapeDisabled("a:selected:disabled");
+        assertEquals("a", escaped);
+
+        escaped = Utils.escapeDisabled("a:disabled:selected");
         assertEquals("a", escaped);
 
         escaped = Utils.escapeDisabled("a");
