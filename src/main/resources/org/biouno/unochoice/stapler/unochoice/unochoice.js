@@ -167,18 +167,18 @@ var UnoChoice = UnoChoice || (function($) {
                 var newValue = String(newValues[i]);
                 if (newValue && newValue.contains(':selected')) {
                     selectedElements.push(i);
-                    newValues[i] = newValues[i].replace(':selected',''));
+                    newValues[i] = newValues[i].replace(':selected','');
                 }
                 if (newValue && newValue.contains(':disabled')) {
                     disabledElements.push(i);
-                    newValues[i] = newValues[i].replace(':disabled',''));
+                    newValues[i] = newValues[i].replace(':disabled','');
                 }
                 var newKey = String(newKeys[i]);
                 if (newKey && typeof newKey === "string" && newKey.contains(':selected')) {
-                    newKeys[i] = newKeys[i].replace(':selected',''));
+                    newKeys[i] = newKeys[i].replace(':selected','');
                 }
                 if (newKey && typeof newKey == "string" && newKey.contains(':disabled')) {
-                    newKeys[i] = newKeys[i].replace(':disabled',''));
+                    newKeys[i] = newKeys[i].replace(':disabled','');
                 }
             }
             if (_self.getFilterElement()) {
