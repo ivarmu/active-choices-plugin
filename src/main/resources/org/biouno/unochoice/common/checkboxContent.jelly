@@ -28,6 +28,15 @@
         <tr id="ecp_${it.randomName}_${index}" style="white-space:nowrap">
           <td>
             <j:choose>
+              <j:when test="${selected &amp;&amp; disabled}">
+                <j:invokeStatic className="org.biouno.unochoice.util.Utils" method="escapeDisabled" var="escapedAndDisabledValue">
+                  <j:arg type="java.lang.Object" value="${escapedValue}" />
+                </j:invokeStatic>
+                <j:invokeStatic className="org.biouno.unochoice.util.Utils" method="escapeDisabled" var="escapedAndDisabledKey">
+                  <j:arg type="java.lang.Object" value="${escapedKey}" />
+                </j:invokeStatic>
+                <input json="${escapedAndDisabledKey}" name="value" value="${escapedAndDisabledKey}" class=" " type="checkbox" title="${escapedAndDisabledValue}" alt="${escapedAndDisabledValue}" checked="true" />
+              </j:when>
               <j:when test="${selected}">
                 <input json="${escapedKey}" name="value" value="${escapedKey}" class=" " type="checkbox" title="${escapedValue}" alt="${escapedValue}" checked="true" />
               </j:when>

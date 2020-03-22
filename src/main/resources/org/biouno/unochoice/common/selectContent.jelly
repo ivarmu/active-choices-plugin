@@ -24,14 +24,14 @@
     <j:invokeStatic className="org.biouno.unochoice.util.Utils" method="escapeDisabled" var="escapedDisabledKey">
         <j:arg type="java.lang.Object" value="${iter.key}" />
     </j:invokeStatic>
-    <j:invokeStatic className="org.biouno.unochoice.util.Utils" method="escapeSelected" var="escapedAndDisabledValue">
-        <j:arg type="java.lang.Object" value="${escapedValue}" />
-    </j:invokeStatic>
-    <j:invokeStatic className="org.biouno.unochoice.util.Utils" method="escapeSelected" var="escapedAndDisabledKey">
-        <j:arg type="java.lang.Object" value="${escapedKey}" />
-    </j:invokeStatic>
     <j:choose>
         <j:when test="${selected &amp;&amp; disabled}">
+            <j:invokeStatic className="org.biouno.unochoice.util.Utils" method="escapeDisabled" var="escapedAndDisabledValue">
+                <j:arg type="java.lang.Object" value="${escapedValue}" />
+            </j:invokeStatic>
+            <j:invokeStatic className="org.biouno.unochoice.util.Utils" method="escapeDisabled" var="escapedAndDisabledKey">
+                <j:arg type="java.lang.Object" value="${escapedKey}" />
+            </j:invokeStatic>
             <option selected="${selected}" disabled="${disabled}" value="${escapedAndDisabledKey}">${escapedAndDisabledValue}</option>
         </j:when>
         <j:when test="${selected}">
