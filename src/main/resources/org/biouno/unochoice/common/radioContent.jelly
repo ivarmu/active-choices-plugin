@@ -35,9 +35,9 @@
                 <j:invokeStatic className="org.biouno.unochoice.util.Utils" method="escapeDisabled" var="escapedAndDisabledKey">
                   <j:arg type="java.lang.Object" value="${escapedKey}" />
                 </j:invokeStatic>
-                <input json="${escapedAndDisabledKey}" alt="${escapedAndDisabledValue}" otherid="${id}" checked="checked" name="${it.name}" value="${escapedAndDisabledKey}" class=" " type="radio" onchange="UnoChoice.fakeSelectRadioButton(&quot;${it.name}&quot;, &quot;${id}&quot;)" />
+                <input disabled="${disabled}" json="${escapedAndDisabledKey}" alt="${escapedAndDisabledValue}" otherid="${id}" checked="checked" name="${it.name}" value="${escapedAndDisabledKey}" class=" " type="radio" onchange="UnoChoice.fakeSelectRadioButton(&quot;${it.name}&quot;, &quot;${id}&quot;)" />
                 <label class="attach-previous">${escapedAndDisabledValue}</label>
-                <input json="${escapedAndDisabledKey}" name="value" value="${escapedAndDisabledKey}" class="${it.name}" type="hidden" id="${id}" title="${escapedAndDisabledValue}" />
+                <input disabled="${disabled}" json="${escapedAndDisabledKey}" name="value" value="${escapedAndDisabledKey}" class="${it.name}" type="hidden" id="${id}" title="${escapedAndDisabledValue}" />
               </j:when>
               <j:when test="${selected}">
                 <input json="${escapedKey}" alt="${escapedValue}" otherid="${id}" checked="checked" name="${it.name}" value="${escapedKey}" class=" " type="radio" onchange="UnoChoice.fakeSelectRadioButton(&quot;${it.name}&quot;, &quot;${id}&quot;)" />
