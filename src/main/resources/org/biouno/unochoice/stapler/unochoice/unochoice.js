@@ -177,7 +177,7 @@ var UnoChoice = UnoChoice || (function($) {
                 if (newKey && typeof newKey === "string" && newKey.contains(':selected')) {
                     newKeys[i] = newKeys[i].replace(':selected','');
                 }
-                if (newKey && typeof newKey == "string" && newKey.contains(':disabled')) {
+                if (newKey && typeof newKey === "string" && newKey.contains(':disabled')) {
                     newKeys[i] = newKeys[i].replace(':disabled','');
                 }
             }
